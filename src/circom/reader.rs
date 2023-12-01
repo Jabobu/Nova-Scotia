@@ -15,6 +15,8 @@ use crate::circom::file::{from_reader, read_field};
 use crate::FileLocation;
 use ff::PrimeField;
 use nova_snark::traits::Group;
+use nova_snark::provider::secp_secq;
+type G1 = secp_secq::secq256k1::Point;
 
 pub fn generate_witness_from_bin<Fr: PrimeField>(
     witness_bin: &Path,
